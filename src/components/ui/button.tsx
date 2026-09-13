@@ -10,6 +10,10 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default: "bg-primary text-primary-foreground shadow hover:bg-primary/90",
+        game: "border border-primary/80 bg-primary text-primary-foreground shadow-game hover:bg-primary-hover active:translate-y-px",
+        gameOutline: "border border-panel-border bg-panel/70 text-foreground shadow-sm hover:border-muted-foreground hover:bg-secondary active:translate-y-px",
+        success: "border border-success/70 bg-success text-success-foreground shadow-sm hover:bg-success/90 active:translate-y-px",
+        danger: "border border-danger/80 bg-danger/10 text-danger hover:bg-danger hover:text-danger-foreground active:translate-y-px",
         destructive: "bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90",
         outline:
           "border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground",
@@ -22,6 +26,7 @@ const buttonVariants = cva(
         sm: "h-8 rounded-md px-3 text-xs",
         lg: "h-10 rounded-md px-8",
         icon: "h-9 w-9",
+        game: "h-12 rounded-md px-7 text-base font-semibold",
       },
     },
     defaultVariants: {
