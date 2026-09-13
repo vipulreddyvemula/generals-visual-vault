@@ -19,6 +19,9 @@
  */
 
 @theme inline {
+  --font-sans: "Roboto", sans-serif;
+  --font-brand: "Cinzel", serif;
+  --font-serif: "Roboto Slab", serif;
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -59,29 +62,54 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+  --color-panel: var(--panel);
+  --color-panel-strong: var(--panel-strong);
+  --color-panel-border: var(--panel-border);
+  --color-gold: var(--gold);
+  --color-gold-bright: var(--gold-bright);
+  --color-primary-hover: var(--primary-hover);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-danger: var(--danger);
+  --color-danger-foreground: var(--danger-foreground);
+  --color-blue-faction: var(--blue-faction);
+  --color-red-faction: var(--red-faction);
+  --shadow-game: 0 8px 28px color-mix(in oklab, var(--primary) 32%, transparent);
 }
 
 :root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
-  --accent-foreground: oklch(0.208 0.042 265.755);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.929 0.013 255.508);
-  --input: oklch(0.929 0.013 255.508);
-  --ring: oklch(0.704 0.04 256.788);
+  --radius: 0.42rem;
+  --background: oklch(0.105 0.025 239);
+  --foreground: oklch(0.96 0.012 245);
+  --card: oklch(0.15 0.035 239 / 88%);
+  --card-foreground: oklch(0.96 0.012 245);
+  --popover: oklch(0.14 0.032 239);
+  --popover-foreground: oklch(0.96 0.012 245);
+  --primary: oklch(0.61 0.22 256);
+  --primary-hover: oklch(0.67 0.2 250);
+  --primary-foreground: oklch(0.99 0 0);
+  --secondary: oklch(0.205 0.04 239);
+  --secondary-foreground: oklch(0.94 0.014 245);
+  --muted: oklch(0.2 0.03 239);
+  --muted-foreground: oklch(0.71 0.035 244);
+  --accent: oklch(0.25 0.07 250);
+  --accent-foreground: oklch(0.98 0.005 245);
+  --destructive: oklch(0.61 0.24 27);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(0.31 0.055 235);
+  --input: oklch(0.3 0.055 235);
+  --ring: oklch(0.66 0.2 250);
+  --panel: oklch(0.14 0.036 239 / 86%);
+  --panel-strong: oklch(0.125 0.032 239 / 96%);
+  --panel-border: oklch(0.35 0.07 233 / 72%);
+  --gold: oklch(0.78 0.13 82);
+  --gold-bright: oklch(0.91 0.13 91);
+  --success: oklch(0.72 0.19 151);
+  --success-foreground: oklch(0.99 0 0);
+  --danger: oklch(0.64 0.24 25);
+  --danger-foreground: oklch(0.99 0 0);
+  --blue-faction: oklch(0.64 0.21 252);
+  --red-faction: oklch(0.62 0.24 27);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -140,5 +168,38 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    min-width: 320px;
+    font-family: var(--font-sans);
+    letter-spacing: 0;
+    overflow-x: hidden;
   }
+}
+
+@utility panel-surface {
+  background: linear-gradient(145deg, color-mix(in oklab, var(--panel-strong) 94%, transparent), color-mix(in oklab, var(--panel) 82%, transparent));
+  border: 1px solid var(--panel-border);
+  box-shadow: inset 0 1px 0 color-mix(in oklab, var(--foreground) 4%, transparent), 0 16px 45px oklch(0.04 0.02 239 / 35%);
+  backdrop-filter: blur(16px);
+}
+
+@utility brand-gold {
+  font-family: var(--font-brand);
+  color: transparent;
+  background: linear-gradient(180deg, var(--gold-bright) 5%, var(--gold) 58%, oklch(0.62 0.12 70) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  filter: drop-shadow(0 3px 0 oklch(0.2 0.05 65)) drop-shadow(0 10px 14px oklch(0.04 0.02 239 / 65%));
+}
+
+@utility battlefield-vignette {
+  background: linear-gradient(180deg, oklch(0.05 0.02 239 / 12%) 0%, oklch(0.06 0.025 239 / 15%) 45%, var(--background) 100%);
+}
+
+@utility subtle-grid {
+  background-image: linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 36px 36px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
 }
