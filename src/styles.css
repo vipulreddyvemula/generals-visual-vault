@@ -74,6 +74,11 @@
   --color-danger-foreground: var(--danger-foreground);
   --color-blue-faction: var(--blue-faction);
   --color-red-faction: var(--red-faction);
+  --color-tile: var(--tile);
+  --color-tile-mountain: var(--tile-mountain);
+  --color-tile-city: var(--tile-city);
+  --color-tile-line: var(--tile-line);
+  --color-tile-ink: var(--tile-ink);
   --shadow-game: 0 8px 28px color-mix(in oklab, var(--primary) 32%, transparent);
 }
 
@@ -110,6 +115,11 @@
   --danger-foreground: oklch(0.99 0 0);
   --blue-faction: oklch(0.64 0.21 252);
   --red-faction: oklch(0.62 0.24 27);
+  --tile: oklch(0.93 0.002 240);
+  --tile-mountain: oklch(0.72 0.004 240);
+  --tile-city: oklch(0.45 0.004 240);
+  --tile-line: oklch(0.42 0.02 240);
+  --tile-ink: oklch(0.24 0.01 240);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
